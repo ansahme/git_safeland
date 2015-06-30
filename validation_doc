@@ -1,0 +1,30 @@
+1. Only 2 whole number digits allowed when 19 is typed into input box. Any number 19 or more must be followed by a dot. (Applies to 
+
+
+
+
+
+Entry format:
+Decimal degrees and N/S/E/W— Latitude and longitude are represented as decimal numbers followed by a letter indicating whether the latitude is north (N) or south (S) of the equator and the longitude is east (E) or west (W) of the prime meridian; for example, 37.68455&#176N; 97.34110&#176W;.
+
+
+Decimal degrees and Plus/minus—Latitude and longitude coordinates are represented as decimal numbers. The latitude is preceded by a minus sign ( – ) if it is south of the equator (a positive number implies north), and the longitude is preceded by a minus sign if it is west of the prime meridian (a positive number implies east); for example, 37.68455° –97.34110°.
+
+
+Degrees/minutes/seconds and N/S/E/W—Latitude and longitude are represented as degrees, minutes, and seconds, followed by a letter indicating the direction from the equator or prime meridian. Minutes and seconds are fractions of a degree: Each minute is one-sixtieth of a degree, and each second is one-sixtieth of a minute; for example, 37º41'26"N 97º20'0"W.
+
+
+Degrees/minutes/seconds and Plus/minus—Latitude and longitude are represented as degrees/minutes/seconds and preceded by a minus sign if south of the equator or west of the prime meridian; for example, 37º41'26" –97º20'0".
+
+
+
+example, 37.68455&#176N; 97.34110&#176W;.
+
+37.68455° –97.34110
+
+for example, 37º41'26"N 97º20'0"W.
+
+for example, 37º41'26" –97º20'0".
+
+i found this on google: 
+https://support.google.com/maps/answer/18539?hl=en

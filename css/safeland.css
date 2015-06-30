@@ -1,0 +1,41 @@
+/*!
+ * Start Bootstrap - The Big Picture HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+html, body, #map-canvas {
+	margin-bottom: 0px;
+	background: none;
+	padding: 0px;
+	height: 100%;
+}
+
+.full {
+	/** background: url(http://placehold.it/1920x1080) no-repeat center center fixed; **/
+	/**  background-color:black; **/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+form.form-inline div.a_point div.form-group {
+	float:left;
+	margin-right:4%;
+	margin-bottom:5%;
+}
+
+form.form-inline div.a_point div.dmsInput span {
+	margin-right:0px;
+	margin-bottom:0px;
+}
+
+.float-left{
+	float:left;
+}
+
+.float-right{
+	float:right;
+}
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>SafeLand | Welcome!</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/safeland.css" rel="stylesheet">
+<!-- Jquery UI -->
+
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<!-- end jquery ui -->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<!--  Maps .js -->
+<script
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbar_">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<button class="navbar-brand" onClick="openDialog()">
+					<span class="glyphicon glyphicon-search"> Search</span>
+				</button>
+				>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+
+	<!-- Page Content -->
+	<div id="map-canvas"></div>
+	
+	<div class="container-fluid" id="findland_div">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-lg-12">
+				<form role="form" class="form-inline">
+				<div><span class=""><input type="radio" id="ddFormat" name="inputFormat"> DD Format</span><span class="float-right"> <input id="dmsFormat" type="radio" name="inputFormat">DMS Format</span></div>
+				<br/>
+				<!--  
+				<div><p>Please Enter Coordinates as Decimal Degrees.
+						Enter South and West as Negative Numbers. Eg. "37.68455" or "–97.34110"</p>
+				</div>
+					<div class="a_point">
+						<div class="form-group latitude">
+							<label for="latitude" class="sr-only">Latitude</label> <input
+								type="text" maxlength="9" size="9" class="form-control"
+								placeholder="Latitude">
+						</div>
+						<div class="form-group longitude">
+							<label for="longitude" class="sr-only">Longitude</label> <input
+								type="text" size="9" maxlength="9" class="form-control"
+								placeholder="Longitude">
+						</div>
+					</div>-->
+					<!-- dms format -->
+					<div class="a_point">
+						<div class="latitude">
+							<span class="float-left"><label for="Lat" class="sr-only">Lat.</label> <input
+								type="text" maxlength="3" size="2" class="form-control"
+								placeholder="Lat" disabled="disabled"></span>
+								
+							<span class="float-left"><label for="Lat" class="sr-only">Lat.</label> <input
+								type="text" maxlength="3" size="2" class="form-control"
+								placeholder="Deg"></span>
+								
+							<span class="float-left"><label for="Min" class="sr-only">Minute</label> <input
+								type="text" maxlength="2" size="1" class="form-control"
+								placeholder="Min"></span>
+								
+								<span class="float-left"><label for="Second" class="sr-only">Minute</label> <input
+								type="text" maxlength="2" size="1" class="form-control"
+								placeholder="Sec"></span>
+								
+								<span class="float-left"><label for="Second" class="sr-only">Direction</label> 
+								<select class="form-control">
+									<option>E</option>
+									<option>W</option>
+								</select></span>
+						</div>
+						<div class="longitude">
+						<span class="float-left"><label for="Lat" class="sr-only">Lat.</label> <input
+								type="text" maxlength="3" size="2" class="form-control"
+								placeholder="Long." disabled="disabled"></span>
+								<span class="float-left"><label for="Long" class="sr-only">Long.</label> <input
+								type="text" maxlength="3" size="2" class="form-control"
+								placeholder="Deg"></span>
+								
+							<span class="float-left"><label for="Min" class="sr-only">Minute</label> <input
+								type="text" maxlength="2" size="1" class="form-control"
+								placeholder="Min"></span>
+								
+								<span class="float-left"><label for="Second" class="sr-only">Minute</label> <input
+								type="text" maxlength="2" size="1" class="form-control"
+								placeholder="Sec"></span>
+								
+								<span class="float-left"><label for="Second" class="sr-only">Direction</label> 
+								<select class="form-control">
+									<option>N</option>
+									<option>S</option>
+								</select></span>
+						</div>
+					</div>
+					
+					<!--  end dms format -->
+					<!-- Add / Remove Buttons -->
+					<div style="display:block;margin:4%">
+						<button title="Remove last point" class="btn btn-default float-left" id="deleteRow"><span class="glyphicon glyphicon-minus-sign"></span></button>				
+						<button style="margin-right:18%" title="Add another point" class="btn btn-default float-right" id="addRow"><span class="glyphicon glyphicon-plus-sign"></span></button>					
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+			
+	<!-- Degree, Minutes, Second Form -->		
+
+	
+	<!-- /.row -->
+
+
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="js/safeland.js"></script>
+
+</body>
+
+</html>
